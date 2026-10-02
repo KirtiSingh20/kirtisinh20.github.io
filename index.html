@@ -1,1 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Kirti Singh | Business Analytics & Data</title>
+
+  <meta name="description" content="Kirti Singh — Business Analytics, Data Analysis and Business Analysis portfolio. Turning business questions into data-driven decisions.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5ef;
+      color: #151515;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245, 245, 239, 0.95);
+      border-bottom: 1px solid #ddd;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.98;
+      letter-spacing: -5px;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 span {
+      color: #657c32;
+    }
+
+    .hero-text {
+      max-width: 680px;
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border: 1px solid #151515;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: #151515;
+      color: white;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 50px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 19px;
+      color: #444;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+    }
+
+    .about-highlight {
+      background: #151515;
+      color: white;
+      padding: 40px;
+    }
+
+    .about-highlight h3 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .about-highlight p {
+      color: #ccc;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      background: #151515;
+      color: white;
+    }
+
+    .projects .section-label {
+      color: #b8cc76;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #222;
+      border: 1px solid #3b3b3b;
+      padding: 34px;
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #b8cc76;
+    }
+
+    .project-number {
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .project-card h3 {
+      font-size: 27px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .project-card p {
+      color: #bbb;
+      margin-bottom: 25px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      border: 1px solid #555;
+      padding: 6px 10px;
+      font-size: 11px;
+      color: #ddd;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 30px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 16px;
+      font-size: 21px;
+    }
+
+    .skill-card p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline {
+      border-top: 1px solid #ccc;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 50px;
+      padding: 32px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .timeline-date {
+      font-size: 13px;
+      color: #777;
+      font-weight: 700;
+    }
+
+    .timeline-item h3 {
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .timeline-company {
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .timeline-item p {
+      color: #555;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #dce7b5;
+    }
+
+    .contact h2 {
+      max-width: 850px;
+      font-size: clamp(42px, 7vw, 80px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 35px;
+    }
+
+    .contact-text {
+      max-width: 600px;
+      font-size: 19px;
+      margin-bottom: 30px;
+    }
+
+    .email {
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #151515;
+      color: #aaa;
+      padding: 30px 0;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .about-grid,
+      .project-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .contact h2 {
+        letter-spacing: -2px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <div class="logo">
+        Kirti Singh
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+    <div class="container">
+
+      <div class="eyebrow">
+        BUSINESS ANALYTICS · DATA · BUSINESS ANALYSIS
+      </div>
+
+      <h1>
+        Turning business questions into
+        <span>data-driven decisions.</span>
+      </h1>
+
+      <p class="hero-text">
+        I'm Kirti Singh, a London-based Business Analytics professional
+        combining data analysis, business intelligence and business analysis
+        to turn complex information into practical business insights.
+      </p>
+
+      <div class="buttons">
+        <a class="button primary" href="#projects">
+          Explore Projects
+        </a>
+
+        <a class="button" href="#contact">
+          Contact Me
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="section-label">
+        01 — ABOUT
+      </div>
+
+      <div class="about-grid">
+
+        <div>
+          <h2 class="section-title">
+            Data is useful when it helps people make better decisions.
+          </h2>
+        </div>
+
+        <div class="about-text">
+
+          <p>
+            I have an MSc in Business Analytics from Queen Mary University
+            of London and a background spanning data analysis, business
+            analysis and technology.
+          </p>
+
+          <p>
+            My work focuses on understanding the business question first,
+            then using data, analytical tools and clear communication to
+            identify what is happening, why it is happening and what can
+            be done next.
+          </p>
+
+          <p>
+            I enjoy working across the full analytical process — from data
+            preparation and SQL analysis to dashboards, predictive modelling,
+            process analysis and business recommendations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section class="projects" id="projects">
+
+    <div class="container">
+
+      <div class="section-label">
+        02 — SELECTED PROJECTS
+      </div>
+
+      <h2 class="section-title">
+        Portfolio projects built around real business problems.
+      </h2>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+
+          <div>
+            <div class="project-number">PROJECT 01</div>
+
+            <h3>
+              Sales Performance & Profitability
+            </h3>
+
+            <p>
+              Analyse sales, revenue, profit and product performance to
+              identify business opportunities and areas of improvement.
+            </p>
+          </div>
+
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Business Analysis</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div>
+            <div class="project-number">PROJECT 02</div>
+
+            <h3>
+              Customer Churn & Segmentation
+            </h3>
+
+            <p>
+              Explore customer behaviour, identify churn patterns and
+              develop customer segments using analytical modelling.
+            </p>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Power BI</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div>
+            <div class="project-number">PROJECT 03</div>
+
+            <h3>
+              Order-to-Delivery Process Improvement
+            </h3>
+
+            <p>
+              Map an operational process, identify bottlenecks and use
+              data to develop practical improvement recommendations.
+            </p>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Excel</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Process Mapping</span>
+            <span class="tag">BA</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div>
+            <div class="project-number">PROJECT 04</div>
+
+            <h3>
+              E-commerce Customer & Market Insights
+            </h3>
+
+            <p>
+              Analyse customer behaviour and market trends to uncover
+              patterns that can support commercial decision-making.
+            </p>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Data Visualisation</span>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-label">
+        03 — WHAT I DO
+      </div>
+
+      <h2 class="section-title">
+        Analytical skills with a business mindset.
+      </h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Data Analysis</h3>
+          <p>
+            Python, Pandas, NumPy, R, SQL, Excel, data cleaning,
+            transformation and statistical analysis.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Business Intelligence</h3>
+          <p>
+            Power BI, Tableau, dashboard development, KPI design,
+            data storytelling and management reporting.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Business Analysis</h3>
+          <p>
+            Requirements thinking, process analysis, workflow mapping,
+            stakeholder communication and improvement recommendations.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Predictive Analytics</h3>
+          <p>
+            Predictive modelling, customer segmentation, model validation
+            and analytical interpretation.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Data & ETL</h3>
+          <p>
+            Data pipelines, data preparation, transformation, validation
+            and analytical workflows.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Ways of Working</h3>
+          <p>
+            Agile, SDLC, cross-functional collaboration, structured
+            problem solving and data-driven decision-making.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+
+    <div class="container">
+
+      <div class="section-label">
+        04 — EXPERIENCE & EDUCATION
+      </div>
+
+      <h2 class="section-title">
+        A combination of business, technology and analytics.
+      </h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">
+            2022 — PRESENT
+          </div>
+
+          <div>
+            <h3>QSR Team Lead</h3>
+            <div class="timeline-company">
+              Eataly Retail London
+            </div>
+
+            <p>
+              Team leadership, KPI monitoring, operational reporting,
+              customer and sales analysis, workflow improvement and
+              performance reporting.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">
+            2020 — PRESENT
+          </div>
+
+          <div>
+            <h3>Freelance Data & Software Analyst</h3>
+            <div class="timeline-company">
+              London
+            </div>
+
+            <p>
+              Data analysis, dashboard automation, predictive modelling,
+              customer segmentation and analytical reporting using
+              Python, Power BI, SAS and R.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">
+            2021 — 2022
+          </div>
+
+          <div>
+            <h3>Business Analyst Consultant</h3>
+            <div class="timeline-company">
+              Project REMAKE
+            </div>
+
+            <p>
+              Analytical frameworks, model validation, automated reporting,
+              workflow analysis and stakeholder-focused insights.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">
+            2020 — 2021
+          </div>
+
+          <div>
+            <h3>Associate Business Analyst</h3>
+            <div class="timeline-company">
+              Knock Knock Solutions
+            </div>
+
+            <p>
+              E-commerce data analysis, SQL, Python, dashboard development,
+              data validation and business reporting.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">
+            2021 — 2022
+          </div>
+
+          <div>
+            <h3>MSc Business Analytics</h3>
+            <div class="timeline-company">
+              Queen Mary University of London
+            </div>
+
+            <p>
+              Data mining, machine learning, predictive analytics,
+              big data management and time-series analysis.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="section-label">
+        05 — CONTACT
+      </div>
+
+      <h2>
+        Let's turn data into something useful.
+      </h2>
+
+      <p class="contact-text">
+        I'm interested in opportunities across data analytics,
+        business analysis, business intelligence and consulting.
+      </p>
+
+      <a class="email" href="mailto:singhkirtishobhnath@gmail.com">
+        singhkirtishobhnath@gmail.com
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 Kirti Singh
+      </div>
+
+      <div>
+        Business Analytics · Data · Business Analysis
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
